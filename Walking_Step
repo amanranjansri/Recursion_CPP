@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+void reachHome(int src, int dest)
+{
+    cout << src << " - " << dest << endl;
+    // base condition
+    if (src == dest)
+    {
+        cout << "Reached home" << endl;
+        return;
+    }
+
+    src++;
+
+    reachHome(src, dest);
+}
+
+int main()
+{
+    int dest = 100;
+    int src = 1;
+
+    reachHome(src, dest);
+    return 0;
+}
