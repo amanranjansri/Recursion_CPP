@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int ans(int n, int m)
+{
+    if (m == 0)
+    {
+        return 1;
+    }
+    return n * ans(n, m - 1);
+}
+int main()
+{
+    int num = 18;
+    int pow = 2;
+
+    cout << "The Power of " << num << "^" << pow << " is : " << ans(num, pow) << endl;
+    return 0;
+}
