@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+bool linear(int arr[], int size, int key)
+{
+    // base condition
+    if (size == 0)
+    {
+        return 0;
+    }
+
+    // recursive relation
+    if (arr[0] == key)
+    {
+        return 1;
+    }
+    else
+    {
+        return linear(arr + 1, size - 1, key);
+    }
+}
+
+int main()
+{
+    int arr[5] = {1, 2, 50, 4, 5};
+
+    bool ans = linear(arr, 5, 50);
+
+    if (ans)
+    {
+        cout << "Element is found " << endl;
+    }
+    else
+    {
+        cout << "Element is not found " << endl;
+    }
+    return 0;
+}
