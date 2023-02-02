@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+void reverse(string& s, int i, int j)
+{
+    // base condition
+    if (i > j)
+    {
+        return;
+    }
+
+    // recursive relation
+    swap(s[i], s[j]);
+    i++;
+    j--;
+
+    reverse(s, i, j);
+}
+
+int main()
+{
+    string s = "AMAN";
+    reverse(s, 0, s.length() - 1);
+    cout << "Reverse of string : " << s << endl;
+
+    return 0;
+}
